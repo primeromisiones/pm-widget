@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Primero Misiones Widget</title>
+
+<style>
+
+body{
+margin:0;
+padding:0;
+background:#f5f5f5;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+.tarjeta{
+max-width:700px;
+margin:auto;
+background:white;
+border-radius:12px;
+box-shadow:0 2px 10px rgba(0,0,0,.15);
+overflow:hidden;
+}
+
+.encabezado{
+background:#d40000;
+color:white;
+padding:12px;
+font-size:24px;
+font-weight:bold;
+text-align:center;
+}
+
+.info{
+padding:20px;
+text-align:center;
+}
+
+.hora{
+font-size:34px;
+font-weight:bold;
+margin-bottom:15px;
+}
+
+.boton{
+display:inline-block;
+padding:12px 20px;
+margin:5px;
+border-radius:30px;
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+.whatsapp{
+background:#25D366;
+}
+
+.canal{
+background:#0A84FF;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="tarjeta">
+
+<div class="encabezado">
+PRIMERO MISIONES
+</div>
+
+<div class="info">
+
+<div class="hora" id="hora"></div>
+
+<a class="boton whatsapp"
+href="https://wa.me/543754405031"
+target="_blank">
+
+📲 Enviar noticia
+
+</a>
+
+<a class="boton canal"
+href="https://whatsapp.com/channel/0029Vb8JtLeIXnljx0gy2C0v"
+target="_blank">
+
+📢 Canal de WhatsApp
+
+</a>
+
+</div>
+
+</div>
+
+<script>
+
+function reloj(){
+
+const ahora=new Date();
+
+let h=String(ahora.getHours()).padStart(2,'0');
+
+let m=String(ahora.getMinutes()).padStart(2,'0');
+
+document.getElementById("hora").innerHTML="🕒 "+h+":"+m;
+
+}
+
+reloj();
+
+setInterval(reloj,1000);
+
+</script>
+
+</body>
+</html>
