@@ -1,121 +1,92 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Primero Misiones Widget</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primero Misiones | Panel Fronterizo</title>
 
-<style>
+    <meta name="description" content="Panel en vivo de Primero Misiones con hora, clima y servicios útiles para la frontera San Javier - Porto Xavier.">
+    <meta name="theme-color" content="#c40000">
 
-body{
-margin:0;
-padding:0;
-background:#f5f5f5;
-font-family:Arial,Helvetica,sans-serif;
-}
-
-.tarjeta{
-max-width:700px;
-margin:auto;
-background:white;
-border-radius:12px;
-box-shadow:0 2px 10px rgba(0,0,0,.15);
-overflow:hidden;
-}
-
-.encabezado{
-background:#d40000;
-color:white;
-padding:12px;
-font-size:24px;
-font-weight:bold;
-text-align:center;
-}
-
-.info{
-padding:20px;
-text-align:center;
-}
-
-.hora{
-font-size:34px;
-font-weight:bold;
-margin-bottom:15px;
-}
-
-.boton{
-display:inline-block;
-padding:12px 20px;
-margin:5px;
-border-radius:30px;
-color:white;
-text-decoration:none;
-font-weight:bold;
-}
-
-.whatsapp{
-background:#25D366;
-}
-
-.canal{
-background:#0A84FF;
-}
-
-</style>
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="tarjeta">
+<div class="pm-widget">
 
-<div class="encabezado">
-PRIMERO MISIONES
+    <header class="pm-header">
+        <h1>🔴 PRIMERO MISIONES | EN VIVO</h1>
+    </header>
+
+    <section class="pm-clock">
+        <div id="current-date">Cargando fecha...</div>
+        <div id="current-time">--:--:--</div>
+    </section>
+
+    <section class="pm-weather">
+
+        <div class="weather-title">
+            🌤️ Clima en San Javier (Misiones)
+        </div>
+
+        <div class="weather-card">
+
+            <div class="weather-main">
+                <div id="weather-temp" class="temperature">
+                    --
+                </div>
+
+                <div id="weather-description" class="description">
+                    Cargando...
+                </div>
+            </div>
+
+            <div class="weather-extra">
+
+                <div class="weather-item">
+                    💧 Humedad
+                    <strong id="weather-humidity">--%</strong>
+                </div>
+
+                <div class="weather-item">
+                    🌬️ Viento
+                    <strong id="weather-wind">-- km/h</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="pm-actions">
+
+        <a
+            class="btn btn-news"
+            href="https://wa.me/543754405031"
+            target="_blank"
+            rel="noopener">
+            📲 Enviar noticia
+        </a>
+
+        <a
+            class="btn btn-channel"
+            href="https://whatsapp.com/channel/0029Vb8JtLeIXnljx0gy2C0v"
+            target="_blank"
+            rel="noopener">
+            📢 Canal de WhatsApp
+        </a>
+
+    </section>
+
+    <footer class="pm-footer">
+        <span>Primero Misiones · Información en tiempo real</span>
+    </footer>
+
 </div>
 
-<div class="info">
-
-<div class="hora" id="hora"></div>
-
-<a class="boton whatsapp"
-href="https://wa.me/543754405031"
-target="_blank">
-
-📲 Enviar noticia
-
-</a>
-
-<a class="boton canal"
-href="https://whatsapp.com/channel/0029Vb8JtLeIXnljx0gy2C0v"
-target="_blank">
-
-📢 Canal de WhatsApp
-
-</a>
-
-</div>
-
-</div>
-
-<script>
-
-function reloj(){
-
-const ahora=new Date();
-
-let h=String(ahora.getHours()).padStart(2,'0');
-
-let m=String(ahora.getMinutes()).padStart(2,'0');
-
-document.getElementById("hora").innerHTML="🕒 "+h+":"+m;
-
-}
-
-reloj();
-
-setInterval(reloj,1000);
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
